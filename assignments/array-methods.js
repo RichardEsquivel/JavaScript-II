@@ -478,12 +478,14 @@ console.log(allCaps);
 // Get a list of runners with large sized shirts so they can choose a different size.
 // Return an array named largeShirts that contains information about the runners that have a shirt size of L and log the result
 let largeShirts = [];
+largeShirts = runners.filter((large) => large.shirt_size === 'L');
 console.log(largeShirts);
 
 // ==== Challenge 4: Use .reduce() ====
 // The donations need to be tallied up and reported for tax purposes. Add up all the donations into a ticketPriceTotal array and log the result
-let ticketPriceTotal = [];
-console.log(ticketPriceTotal);
+let ticketPriceTotal = runners.reduce((totals, a) => totals + a.donation, 0);
+
+console.log(`The GRAND TOTAL of donations was ${ticketPriceTotal}!!!`);
 
 // ==== Challenge 5: Be Creative ====
 // Now that you have used .forEach(), .map(), .filter(), and .reduce().  I want you to think of potential problems you could solve given the data set
